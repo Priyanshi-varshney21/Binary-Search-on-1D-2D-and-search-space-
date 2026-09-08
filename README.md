@@ -40,4 +40,16 @@ def lowerBound(self, nums, x):
                 low=mid+1
         return low
 
-        
+# SEARCH INSERT POSITION
+def searchInsert(self, arr, target):
+        low=0
+        high=len(nums)-1
+        while low<=high:
+            mid=low+(high-low)//2
+            if arr[mid]==target:
+                return mid
+            elif arr[mid]>target:
+                high=mid-1
+            else:
+                low=mid+1
+        return low
