@@ -53,3 +53,4 @@ def searchInsert(self, arr, target):
             else:
                 low=mid+1
         return low
+        
