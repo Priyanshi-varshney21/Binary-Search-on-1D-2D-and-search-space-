@@ -112,4 +112,27 @@ def countOccurrences(self, nums, target):
                 high=mid-1
         ans=(last-first)+1
         return ans
-        
+
+# SEARCH IN A SORTED ROTATED ARRAY
+def search(self, nums, k):
+        low=0
+        high=len(nums)-1
+        while low<=high:
+            mid=low+(high-low)//2
+            if nums[mid]==k:
+                return mid
+            #left half is sorted
+            if nums[low]<=nums[mid]:
+                if nums[low]<=k<nums[mid]:
+                    high=mid-1
+                else:
+                    low=mid+1
+            #Right half is sorted
+            else:
+                if nums[mid]<k<=nums[high]:
+                    low=mid+1
+                else:
+                    high=mid-1
+        return -1
+
+
