@@ -157,5 +157,14 @@ def searchInARotatedSortedArrayII(self, nums, k):
                     high=mid-1
         return False
 
-
-
+# FIND MINIMUM IN A ROTATED SORTED ARRAY 
+def findMin(self, arr):
+        low=0
+        high=len(nums)-1
+        while low<=high:
+            mid=low+(high-low)//2
+            if nums[mid]>nums[high]:
+                low=mid+1
+            else:
+                high=mid
+        return nums[low]
