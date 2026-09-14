@@ -168,3 +168,15 @@ def findMin(self, arr):
             else:
                 high=mid
         return nums[low]
+
+# FIND OUT HOW MANY TIMES THE ARRAY IS SORTED
+def findKRotation(self, arr):
+        low=0
+        high=len(arr)-1
+        while low<high:
+            mid=low+(high-low)//2
+            if arr[mid]>arr[high]:
+                low=mid+1
+            else:
+                high=mid
+        return low
