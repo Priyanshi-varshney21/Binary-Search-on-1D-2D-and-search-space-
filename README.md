@@ -180,3 +180,30 @@ def findKRotation(self, arr):
             else:
                 high=mid
         return low
+
+# SINGLE ELEMENT IN A SORTED ARRAY
+def singleNonDuplicate(self, nums):
+        n=len(nums)-1
+        s=0
+        e=n
+        if n==1:
+            return nums[0]
+        while s<e:
+            mid=s+(e-s)//2
+            if mid==0 and nums[0]!=nums[1]:
+                return nums[0]
+            if mid==n-1 and nums[n-1]!=nums[n-2]:
+                return nums[n-1]
+            if nums[mid-1] != nums[mid] != nums[mid+1]:
+                return nums[mid]
+            if mid%2==0:   #EVEN 
+                if nums[mid]==nums[mid+1]:
+                    s=mid+2
+                else:
+                    e=mid-1
+            else: #ODD
+                if nums[mid-1]==nums[mid]:
+                    s=mid+1
+                else:
+                    e=mid-1
+                    
